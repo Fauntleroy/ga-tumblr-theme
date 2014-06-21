@@ -1,0 +1,32 @@
+{
+  "name": "ga-tumblr-theme",
+  "version": "0.0.0",
+  "description": "Tumblr theme for https://generalassemb.ly/education/tumblr-wework-ga-present-summer-blog-party/san-francisco/6028",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Fauntleroy/ga-tumblr-theme.git"
+  },
+  "keywords": [
+    "tumblr",
+    "theme",
+    "ga",
+    "wework"
+  ],
+  "author": "Timothy Kempf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fauntleroy/ga-tumblr-theme/issues"
+  },
+  "homepage": "https://github.com/Fauntleroy/ga-tumblr-theme",
+  "devDependencies": {
+    "gulp": "^3.8.1",
+    "gulp-inline-source": "0.0.2",
+    "gulp-less": "^1.2.3",
+    "vinyl-source-stream": "^0.1.1",
+    "watchify": "^0.10.2"
+  }
+}
