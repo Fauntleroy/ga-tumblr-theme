@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+	<title>{title}</title>
+	<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<!--smoosh-->
 	<link rel="stylesheet" href="../dist/index.css"/>
 	<script src="../dist/index.js"></script>
@@ -20,6 +21,9 @@
 	</nav>
 	{/block:Pagination}
 
+	<!--Header-->
+	<h1>{title}</h1>
+
 	<!--Posts-->
 	{block:Posts}
 
@@ -27,7 +31,6 @@
 		{block:Video}
 		<div class="post video">
 			{Video-500}
-			<a href="{Permalink}" class="fav">&#9829;</a>
 			{block:HasTags}
 			<ul class="tags">
 				{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
@@ -42,7 +45,6 @@
 		{block:Audio}
 		<div class="post audio">
 			{AudioPlayerBlack}
-			<a href="{Permalink}" class="fav">&#9829;</a>
 			{block:HasTags}
 			<ul class="tags">
 				{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
@@ -56,7 +58,6 @@
 		<!--Photo Post-->
 		{block:Photo}
 		<div class="post photo">
-			<a href="{Permalink}" class="fav">&#9829;</a>
 			<div class="backing">
 				<a href="{PhotoURL-HighRes}"><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></a>
 			</div>
@@ -81,7 +82,6 @@
 		<!--Link Post-->
 		{block:Link}
 			<div class="post link">
-				<a href="{Permalink}" class="fav">&#9829;</a>
 				<a href="{URL}" {Target} class="link">{Name}</a>
 				{block:Description}
 				<div class="description">{Description}</div>
@@ -92,7 +92,6 @@
 		<!--Text Post-->
 		{block:Text}
 		<div class="post text">
-			<a href="{Permalink}" class="fav">&#9829;</a>
 			{block:Title}
 				<h2>{Title}</h2>
 			{/block:Title}

@@ -8,11 +8,14 @@
   padding: 0;
 }
 body {
-  background: #323232;
-  font: 18px 'Open Sans', Helvetica, sans-serif;
+  background: #fff5fa;
+  color: #372d2d;
+  font: 18px 'Lora', Times, serif;
+  padding: 80px 70px;
 }
 #pagination {
   position: fixed;
+  top: 125px;
   right: 0;
 }
 #pagination ul {

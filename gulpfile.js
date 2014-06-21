@@ -22,9 +22,6 @@ gulp.task( 'compile css', function(){
 
 gulp.task( 'compile js', function(){
 	var w = watchify( JS_SRC_FILE );
-	w.transform({
-		global: true
-	}, 'uglifyify');
 	var bundle = function(){
 		return w.bundle()
 			.pipe( vinyl_source('index.js') )
