@@ -1,6 +1,26 @@
 @background: rgb( 50, 50, 50 );
 
+.list-reset {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	> li {
+		margin: 0;
+		padding: 0;
+	}
+}
+
 body {
 	background: @background;
 	font: 18px 'Open Sans', Helvetica, sans-serif;
+}
+
+#pagination {
+	position: fixed;
+	right: 0;
+
+	ul {
+		.list-reset;
+	}
 }

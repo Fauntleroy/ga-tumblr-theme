@@ -2,18 +2,22 @@
 <html>
 <head>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="./index.css" inline />
-	<script src="./index.js" inline></script>
+	<!--smoosh-->
+	<link rel="stylesheet" href="../dist/index.css"/>
+	<script src="../dist/index.js"></script>
+	<!--endsmoosh-->
 </head>
 <body>
 
 	<!--Pagination-->
 	{block:Pagination}
-	<div id="pagination">
-		{block:PreviousPage}<a href="{PreviousPage}" class="prev">Previous</a>{/block:PreviousPage}
-		{CurrentPage} / {TotalPages}
-		{block:NextPage}<a href="{NextPage}" class="next">Next</a>{/block:NextPage}
-	</div>
+	<nav id="pagination">
+		<ul>
+			{block:PreviousPage}<li class="previous"><a href="{PreviousPage}" class="prev">Previous</a></li>{/block:PreviousPage}
+			<li class="current-total">{CurrentPage} / {TotalPages}</li>
+			{block:NextPage}<li class="next"><a href="{NextPage}" class="next">Next</a></li>{/block:NextPage}
+		</ul>
+	</nav>
 	{/block:Pagination}
 
 	<!--Posts-->

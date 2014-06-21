@@ -1,4 +1,26 @@
+.list-reset {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.list-reset > li {
+  margin: 0;
+  padding: 0;
+}
 body {
   background: #323232;
   font: 18px 'Open Sans', Helvetica, sans-serif;
+}
+#pagination {
+  position: fixed;
+  right: 0;
+}
+#pagination ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#pagination ul > li {
+  margin: 0;
+  padding: 0;
 }

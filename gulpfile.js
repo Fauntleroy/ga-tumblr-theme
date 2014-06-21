@@ -10,7 +10,7 @@ var vinyl_source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var gulp = require('gulp');
 var gulp_less = require('gulp-less');
-var gulp_inlinesource = require('gulp-inline-source');
+var gulp_smoosher = require('gulp-smoosher');
 
 gulp.task( 'compile css', function(){
 	return gulp.src( LESS_SRC_FILE )
@@ -22,6 +22,9 @@ gulp.task( 'compile css', function(){
 
 gulp.task( 'compile js', function(){
 	var w = watchify( JS_SRC_FILE );
+	w.transform({
+		global: true
+	}, 'uglifyify');
 	var bundle = function(){
 		return w.bundle()
 			.pipe( vinyl_source('index.js') )
@@ -36,7 +39,7 @@ gulp.task( 'compile js', function(){
 
 gulp.task( 'inline sources', function(){
 	return gulp.src( HTML_SRC_FILE )
-        .pipe( gulp_inlinesource( COMPILED_PATH ) )
+        .pipe( gulp_smoosher() )
         .pipe( gulp.dest( COMPILED_PATH ) );
 });
 
