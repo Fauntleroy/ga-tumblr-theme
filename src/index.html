@@ -1,10 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="./index.css" inline />
 	<script src="./index.js" inline></script>
 </head>
 <body>
+
+	<!--Pagination-->
+	{block:Pagination}
+	<div id="pagination">
+		{block:PreviousPage}<a href="{PreviousPage}" class="prev">Previous</a>{/block:PreviousPage}
+		{CurrentPage} / {TotalPages}
+		{block:NextPage}<a href="{NextPage}" class="next">Next</a>{/block:NextPage}
+	</div>
+	{/block:Pagination}
+
+	<!--Posts-->
+	{block:Posts}
+
+		<!--Video Post-->
+		{block:Video}
+		<div class="post video">
+			{Video-500}
+			<a href="{Permalink}" class="fav">&#9829;</a>
+			{block:HasTags}
+			<ul class="tags">
+				{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
+			</ul>
+			{/block:HasTags}
+				{block:RebloggedFrom}<a href="{ReblogRootURL}" title="{ReblogRootTitle}" class="reblog">&#9996;</a>{/block:RebloggedFrom}
+				{block:Caption}{Caption}{/block:Caption}
+		</div>
+		{/block:Video}
+
+		<!--Audio Post-->
+		{block:Audio}
+		<div class="post audio">
+			{AudioPlayerBlack}
+			<a href="{Permalink}" class="fav">&#9829;</a>
+			{block:HasTags}
+			<ul class="tags">
+				{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
+			</ul>
+			{/block:HasTags}
+				{block:RebloggedFrom}<a href="{ReblogRootURL}" title="{ReblogRootTitle}" class="reblog">&#9996;</a>{/block:RebloggedFrom}
+				{block:Caption}{Caption}{/block:Caption}
+		</div>
+		{/block:Audio}
+
+		<!--Photo Post-->
+		{block:Photo}
+		<div class="post photo">
+			<a href="{Permalink}" class="fav">&#9829;</a>
+			<div class="backing">
+				<a href="{PhotoURL-HighRes}"><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></a>
+			</div>
+			{block:HasTags}
+			<ul class="tags">
+				{block:Tags}<li><a href="{TagURL}">{Tag}</a></li>{/block:Tags}
+			</ul>
+			{/block:HasTags}
+				{block:RebloggedFrom}<a href="{ReblogRootURL}" title="{ReblogRootTitle}" class="reblog">&#9996;</a>{/block:RebloggedFrom}
+				{block:Caption}{Caption}{/block:Caption}
+		</div>
+		{/block:Photo}
+
+		<!--Panorama Post-->
+		{block:Panorama}
+		{/block:Panorama}
+
+		<!--Photoset Post-->
+		{block:Photoset}
+		{/block:Photoset}
+
+		<!--Link Post-->
+		{block:Link}
+			<div class="post link">
+				<a href="{Permalink}" class="fav">&#9829;</a>
+				<a href="{URL}" {Target} class="link">{Name}</a>
+				{block:Description}
+				<div class="description">{Description}</div>
+				{/block:Description}
+			</div>
+		{/block:Link}
+
+		<!--Text Post-->
+		{block:Text}
+		<div class="post text">
+			<a href="{Permalink}" class="fav">&#9829;</a>
+			{block:Title}
+				<h2>{Title}</h2>
+			{/block:Title}
+			{Body}
+		</div>
+		{/block:Text}
+
+		<!--Quote Post-->
+		{block:Quote}
+		{/block:Quote}
+
+		<!--Answer Post-->
+		{block:Answer}
+		{/block:Answer}
+
+	{/block:Posts}
 
 </body>
 </html>
